@@ -6,7 +6,7 @@ import os
 # Gesture script paths (customize as needed)
 GESTURE_DIR = os.path.join(os.path.dirname(__file__), "gestures")
 BRIGHTNESS_PY = os.path.join(GESTURE_DIR, "brightness.py")
-SWIPE_PY = os.path.join(GESTURE_DIR, "swipe.py")
+CONTROL_PY = os.path.join(GESTURE_DIR, "control.py")
 
 process = None  # Track child process
 
@@ -18,7 +18,7 @@ def run_brightness():
 def run_swipe():
     global process
     if process: process.terminate()
-    process = subprocess.Popen([sys.executable, SWIPE_PY])
+    process = subprocess.Popen([sys.executable, CONTROL_PY])
 
 def exit_app():
     if process:
